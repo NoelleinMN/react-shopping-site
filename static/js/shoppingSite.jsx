@@ -21,6 +21,17 @@ function App() {
       .then((response) => response.json())
       .then((melonData) => setMelons(melonData));
   }, []);
+
+  React.useEffect(() => {
+    const initialCart = localStorage.getItem("shoppingCart");
+    if (initialCart) {
+      setShoppingCart(JSON.parse(initialCart));
+    }
+  }, []);
+
+  React.useEffect(() => {
+    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+  }, [shoppingCart]);
   
 
   return (
