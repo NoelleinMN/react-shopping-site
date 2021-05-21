@@ -12,7 +12,7 @@ function App() {
           newShoppingCart[melonCode] = 1;
         }
         return newShoppingCart;
-        })
+        });
       }
     console.log(shoppingCart);
 
@@ -50,7 +50,7 @@ function App() {
           <AllMelonsPage melons={melons} addMelonToCart={addMelonToCart} />
         </ReactRouterDOM.Route>
         <ReactRouterDOM.Route exact path="/cart">
-          <ShoppingCartPage shoppingCart={shoppingCart} melons={melons} />
+          <ShoppingCartPage cart={shoppingCart} melons={melons} />
         </ReactRouterDOM.Route>
       </div>
     </ReactRouterDOM.BrowserRouter>
